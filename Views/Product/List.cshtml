@@ -1,0 +1,13 @@
+﻿<div>
+    <h5>All Products are shown here</h5>
+</div>
+
+<h5>@Model.CurrentCategory</h5>
+<div class="row">
+    @{
+        foreach (Product product in Model.Products)
+        {
+            @Html.Partial("ProductsSummary", product)
+        }
+    }
+</div>
