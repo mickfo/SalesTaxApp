@@ -47,7 +47,7 @@ namespace SalesTaxApp.Data.Models
                     {
                         Name = "Chocolate Bar",
                         Price = 0.85M,
-                        ShortDescription = "3 Musketeers Candy Bar 1.92 oz.",
+                        ShortDescription = "3 Musketeers Candy Bar 1.92 oz. The perfect candy bar.",
                         LongDescription = "3 Musketeers with it's delicious chocolate covered fluffy nougat is the perfect candy bar when you don't want something so heavy. Experience the lighter way to enjoy chocolate!",
                         ImageUrl = "../../images/3-musketeers.jpg",
                         IsFood = true,
@@ -57,7 +57,7 @@ namespace SalesTaxApp.Data.Models
                     
                     new Product
                     {
-                        Name = "Imported box of chocolates - Premium",
+                        Name = "Imported box of chocolates",
                         Price = 11.25M,
                         ShortDescription = "Luxury imported box of chocolates.",
                         LongDescription = "Some long description goes here",
@@ -69,19 +69,19 @@ namespace SalesTaxApp.Data.Models
                     
                     new Product
                     {
-                        Name = "Imported box of chocolates - Standard",
+                        Name = "Imported box of chocolates",
                         Price = 10.00M,
                         ShortDescription = "Imported Swiss Chocolate Box – (16 Pcs)",
                         LongDescription = "Some long description goes here",
-                        ImageUrl = "../../imported-chocolates-premium.jpg",
+                        ImageUrl = "../../images/imported-chocolates-premium.jpg",
                         IsFood = true,
                         IsImport = true,
-                        ImageThumbnailUrl = "../../imported-chocolates-premium-s.jpg"
+                        ImageThumbnailUrl = "../../images/imported-chocolates-premium-s.jpg"
                     },
 
                     new Product
                     {
-                        Name = "Imported bottle of perfume - Premium",
+                        Name = "Imported bottle of perfume",
                         Price = 47.50M,
                         ShortDescription = "Eau de parfum for men and women.",
                         LongDescription = "Featuring a unique citrus-laced scent that is both refreshing and provocative, ck one by Calvin Klein is a veau de parfum for men and women.",
@@ -93,7 +93,7 @@ namespace SalesTaxApp.Data.Models
 
                     new Product
                     {
-                        Name = "Imported bottle of perfume - Standard",
+                        Name = "Imported bottle of perfume",
                         Price = 27.99M,
                         ShortDescription = "This one is less expensive.",
                         LongDescription = "Some long description.",

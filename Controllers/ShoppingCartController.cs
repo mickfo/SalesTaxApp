@@ -49,7 +49,7 @@ namespace SalesTaxApp.Controllers
             {
                 _shoppingCart.RemoveFromCart(selectedProduct);
             }
-            return RedirectToAction("List", "Product");
+            return RedirectToAction("Index");
         }
     }
 }

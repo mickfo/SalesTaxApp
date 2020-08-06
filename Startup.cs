@@ -53,9 +53,24 @@ namespace SalesTaxApp
                   routes.MapRoute("default", "{controller=Product}/{action=List}/{Id?}");
               });
 
-            //DbInitializer.Seed(app);
+            UpdateDatabase(app);
+
             DbInitializer.Seed(serviceProvider);
 
+        }
+
+        public static void UpdateDatabase(IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices
+                    .GetRequiredService<IServiceScopeFactory>()
+                    .CreateScope()
+                )
+            {
+                using (var context = serviceScope.ServiceProvider.GetService<ApplicationContext>())
+                {
+                    context.Database.Migrate();
+                }
+            }
         }
     }
 }
