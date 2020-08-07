@@ -18,6 +18,9 @@ namespace SalesTaxApp.Data.Repositories
 
         public IEnumerable<Product> Products => _appDbContext.Products;
 
-        public Product GetProductById(int productId) => _appDbContext.Products.FirstOrDefault(p => p.ProductId == productId);
+        public Product GetProductById(int productId)
+        {
+           return _appDbContext.Products.FirstOrDefault(p => p.ProductId == productId);
+        }
     }
 }
