@@ -106,13 +106,7 @@ namespace SalesTaxApp.Data.Models
                 taxRate = taxRate + .05M;
             }
 
-            itemTax = Math.Ceiling(product.Price * taxRate * 20) / 20;
-
-
-
-            //itemTax = Math.Round(((product.Price * amount) * taxRate) * 2, MidpointRounding.AwayFromZero) / 2;
-
-            //itemTax = Math.Round(((product.Price * amount) * taxRate) * 2, MidpointRounding.AwayFromZero) / 2; //((product.Price * amount) * taxRate);
+            itemTax = Math.Ceiling(product.Price * taxRate * 20) / 20; // tax round up to the nickel.
 
             return itemTax * amount;
         }
@@ -149,6 +143,13 @@ namespace SalesTaxApp.Data.Models
         {
             var taxTotal = _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
                 .Select(c => c.ItemTax).Sum();
+            return taxTotal;
+        }
+
+        public decimal GetShoppingCartCount()
+        {
+            var taxTotal = _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
+                .Select(c => c.Amount).Sum();
             return taxTotal;
         }
     }
