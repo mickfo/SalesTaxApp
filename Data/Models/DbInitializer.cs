@@ -28,6 +28,7 @@ namespace SalesTaxApp.Data.Models
                         ImageUrl = "../../images/percy-jacksons-greek-gods-resized-opt.jpg",
                         IsFood = false,
                         IsImport = false,
+                        IsMedical = false,
                         ImageThumbnailUrl = "../../images/percy-jacksons-greek-gods-resized-opt-s.jpg"
                     },
 
@@ -40,6 +41,7 @@ namespace SalesTaxApp.Data.Models
                         ImageUrl = "../../images/beatles-sargent-peppers.jpg",
                         IsFood = false,
                         IsImport = false,
+                        IsMedical = false,
                         ImageThumbnailUrl = "../../images/beatles-sargent-peppers-s.jpg"
                     },
                     
@@ -52,6 +54,7 @@ namespace SalesTaxApp.Data.Models
                         ImageUrl = "../../images/3-musketeers.jpg",
                         IsFood = true,
                         IsImport = false,
+                        IsMedical = false,
                         ImageThumbnailUrl = "../../images/3-musketeers-s.jpg"
                     },
                     
@@ -64,6 +67,7 @@ namespace SalesTaxApp.Data.Models
                         ImageUrl = "../../images/imported-chocolates-1.jpg",
                         IsFood = true,
                         IsImport = true,
+                        IsMedical = false,
                         ImageThumbnailUrl = "../../images/imported-chocolates-1-s.jpg"
                     },
                     
@@ -76,6 +80,7 @@ namespace SalesTaxApp.Data.Models
                         ImageUrl = "../../images/imported-chocolates-premium.jpg",
                         IsFood = true,
                         IsImport = true,
+                        IsMedical = false,
                         ImageThumbnailUrl = "../../images/imported-chocolates-premium-s.jpg"
                     },
 
@@ -88,6 +93,7 @@ namespace SalesTaxApp.Data.Models
                         ImageUrl = "../../images/expensive-imported-perfume.jpg",
                         IsFood = false,
                         IsImport = true,
+                        IsMedical = false,
                         ImageThumbnailUrl = "../../images/expensive-imported-perfume-s.jpg"
                     },
 
@@ -100,6 +106,7 @@ namespace SalesTaxApp.Data.Models
                         ImageUrl = "../../images/cheap-imported-perfume.jpg",
                         IsFood = false,
                         IsImport = true,
+                        IsMedical = false,
                         ImageThumbnailUrl = "../../images/cheap-imported-perfume-s.jpg"
                     },
 
@@ -112,6 +119,7 @@ namespace SalesTaxApp.Data.Models
                         ImageUrl = "../../images/happy-perfume.jpg",
                         IsFood = false,
                         IsImport = false,
+                        IsMedical = false,
                         ImageThumbnailUrl = "../../images/happy-perfume-s.jpg"
                     },
                     
@@ -124,6 +132,7 @@ namespace SalesTaxApp.Data.Models
                         ImageUrl = "../../images/headache-pills.jpg",
                         IsFood = false,
                         IsImport = false,
+                        IsMedical = true,
                         ImageThumbnailUrl = "../../images/headache-pills-s.jpg"
                     }
                 );

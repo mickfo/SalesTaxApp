@@ -26,7 +26,8 @@ namespace SalesTaxApp.Controllers
             var sCVM = new ShoppingCartViewModel
             {
                 ShoppingCart = _shoppingCart,
-                ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
+                ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal(),
+                ShoppingCartTaxTotal = _shoppingCart.GetShoppingCartTaxTotal()
             };
 
             return View(sCVM);

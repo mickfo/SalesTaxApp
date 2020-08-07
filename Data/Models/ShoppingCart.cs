@@ -57,6 +57,9 @@ namespace SalesTaxApp.Data.Models
             {
                 shoppingCartItem.Amount++;
             }
+
+            shoppingCartItem.ItemTax = CalculateTax(product, shoppingCartItem.Amount);
+
             _appDbContext.SaveChanges();
         }
 
@@ -78,11 +81,40 @@ namespace SalesTaxApp.Data.Models
                 {
                     _appDbContext.ShoppingCartItems.Remove(shoppingCartItem);
                 }
+
+                shoppingCartItem.ItemTax = CalculateTax(product, shoppingCartItem.Amount);
+
                 _appDbContext.SaveChanges();
 
              }
 
             return localAmount;
+        }
+
+        public decimal CalculateTax(Product product, int amount)
+        {
+            decimal itemTax = 0.00M;
+            decimal taxRate = 0.10M;
+
+            if (product.IsMedical || product.IsFood || product.Name == "Book")
+            {
+                taxRate = 0.00M;
+            }
+            
+            if (product.IsImport)
+            {
+                taxRate = taxRate + .05M;
+            }
+
+            itemTax = Math.Ceiling(product.Price * taxRate * 20) / 20;
+
+
+
+            //itemTax = Math.Round(((product.Price * amount) * taxRate) * 2, MidpointRounding.AwayFromZero) / 2;
+
+            //itemTax = Math.Round(((product.Price * amount) * taxRate) * 2, MidpointRounding.AwayFromZero) / 2; //((product.Price * amount) * taxRate);
+
+            return itemTax * amount;
         }
 
         public List<ShoppingCartItem> GetShoppingCartItems()
@@ -109,8 +141,15 @@ namespace SalesTaxApp.Data.Models
         public decimal GetShoppingCartTotal()
         {
             var total = _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
-                .Select(c => c.Product.Price * c.Amount).Sum();
+                .Select(c => (c.Product.Price * c.Amount) + c.ItemTax).Sum();
             return total;
+        }
+
+        public decimal GetShoppingCartTaxTotal()
+        {
+            var taxTotal = _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
+                .Select(c => c.ItemTax).Sum();
+            return taxTotal;
         }
     }
 }

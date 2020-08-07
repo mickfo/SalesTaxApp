@@ -11,6 +11,6 @@ namespace SalesTaxApp.ViewModels
         public ShoppingCart ShoppingCart { get; set; }
 
         public decimal ShoppingCartTotal { get; set; }
-
+        public decimal ShoppingCartTaxTotal { get; internal set; }
     }
 }

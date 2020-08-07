@@ -16,5 +16,6 @@ namespace SalesTaxApp.Data.Models
         public string ImageThumbnailUrl { get; set; }
         public bool IsFood { get; set; }
         public bool IsImport { get; set; }
+        public bool IsMedical { get; set; }
     }
 }

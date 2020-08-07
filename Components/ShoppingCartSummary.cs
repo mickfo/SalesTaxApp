@@ -26,7 +26,8 @@ namespace SalesTaxApp.Components
             var shoppingCartViewModel = new ShoppingCartViewModel
             {
                 ShoppingCart = _shoppingCart,
-                ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
+                ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal(),
+                ShoppingCartTaxTotal = _shoppingCart.GetShoppingCartTaxTotal()
             };
 
             return View(shoppingCartViewModel);
