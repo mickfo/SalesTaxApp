@@ -22,5 +22,6 @@ namespace SalesTaxApp.Data.Repositories
         {
            return _appDbContext.Products.FirstOrDefault(p => p.ProductId == productId);
         }
+
     }
 }
